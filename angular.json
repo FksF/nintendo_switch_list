@@ -1,7 +1,361 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-  }
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"micro-shell": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/micro-shell",
+			"sourceRoot": "projects/micro-shell/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/micro-shell",
+						"index": "projects/micro-shell/src/index.html",
+						"main": "projects/micro-shell/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/micro-shell/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-shell/src/favicon.ico",
+							"projects/micro-shell/src/assets"
+						],
+						"styles": [
+							"projects/micro-shell/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/micro-shell/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/micro-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "micro-shell:build:production",
+							"extraWebpackConfig": "projects/micro-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "micro-shell:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/micro-shell/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "micro-shell:build",
+						"extraWebpackConfig": "projects/micro-shell/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/micro-shell/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-shell/src/favicon.ico",
+							"projects/micro-shell/src/assets"
+						],
+						"styles": [
+							"projects/micro-shell/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"micro-games": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/micro-games",
+			"sourceRoot": "projects/micro-games/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/micro-games",
+						"index": "projects/micro-games/src/index.html",
+						"main": "projects/micro-games/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/micro-games/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-games/src/favicon.ico",
+							"projects/micro-games/src/assets"
+						],
+						"styles": [
+							"projects/micro-games/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/micro-games/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/micro-games/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "micro-games:build:production",
+							"extraWebpackConfig": "projects/micro-games/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "micro-games:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4201,
+						"publicHost": "http://localhost:4201",
+						"extraWebpackConfig": "projects/micro-games/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "micro-games:build",
+						"extraWebpackConfig": "projects/micro-games/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/micro-games/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-games/src/favicon.ico",
+							"projects/micro-games/src/assets"
+						],
+						"styles": [
+							"projects/micro-games/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"micro-cart": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/micro-cart",
+			"sourceRoot": "projects/micro-cart/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/micro-cart",
+						"index": "projects/micro-cart/src/index.html",
+						"main": "projects/micro-cart/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/micro-cart/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-cart/src/favicon.ico",
+							"projects/micro-cart/src/assets"
+						],
+						"styles": [
+							"projects/micro-cart/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/micro-cart/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/micro-cart/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "micro-cart:build:production",
+							"extraWebpackConfig": "projects/micro-cart/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "micro-cart:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4202,
+						"publicHost": "http://localhost:4202",
+						"extraWebpackConfig": "projects/micro-cart/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "micro-cart:build",
+						"extraWebpackConfig": "projects/micro-cart/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/micro-cart/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/micro-cart/src/favicon.ico",
+							"projects/micro-cart/src/assets"
+						],
+						"styles": [
+							"projects/micro-cart/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"shared-lib": {
+			"projectType": "library",
+			"root": "projects/shared-lib",
+			"sourceRoot": "projects/shared-lib/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/shared-lib/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/shared-lib/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/shared-lib/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"tsConfig": "projects/shared-lib/tsconfig.spec.json",
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						]
+					}
+				}
+			}
+		}
+	}
 }
