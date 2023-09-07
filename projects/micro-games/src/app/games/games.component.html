@@ -1,4 +1,5 @@
 <div id="__next" data-reactroot="">
+    <h1>Loading ... {{loading$ | async | json}} </h1>
     <main id="main" class="sc-aXZVg brzxEe">
         <div class="constrained-sc-1d4m5hk-0 cTFArn">
             <div class="SearchLayout__SortContainer-sc-5immi9-2 PLPstyles__StyledSortContainer-sc-1egu3fv-0 fzBtGA izshIQ">
@@ -147,7 +148,7 @@
                                         transform: scale(.01);
                                     }
                                 </style>
-                                <input id="react-select-3015-input" tabindex="0" inputMode="none" value="" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-label="Destacados" role="combobox" aria-readonly="true" class="css-1hac4vs-dummyInput"/>
+                                <input id="react-select-3015-input" tabindex="0" inputMode="none" value="" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-label="Destacados" role="combobox" class="css-1hac4vs-dummyInput"/>
                             </div>
                             <style data-emotion="css 1wy0on6">
                                 .css-1wy0on6 {
@@ -571,7 +572,7 @@
                 <div class="SearchLayout__FiltersContent-sc-5immi9-4 gDOEiO">
                     <div class="SearchLayout__FilterResultsGrid-sc-5immi9-6 difXoz">
                       <app-game-card
-                        *ngFor="let game of games"
+                        *ngFor="let game of games$ | async"
                         [game]="game"
                       ></app-game-card>
                     </div>

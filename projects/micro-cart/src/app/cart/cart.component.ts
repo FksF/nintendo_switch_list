@@ -11,8 +11,10 @@ import { SharedLibService, ICommonGame } from '@shared-lib';
 export class CartComponent implements OnInit {
   games: ICommonGame[] = [];
 
-  constructor(private commonsLibService: SharedLibService) {
-    this.games = this.commonsLibService.getGames();
+  constructor(private sharedLibService: SharedLibService) {
+    this.games = this.sharedLibService.getGames();
+    console.log('GAMES IN CART', this.games);
+
   }
 
 

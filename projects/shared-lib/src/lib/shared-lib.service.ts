@@ -13,9 +13,8 @@ export class SharedLibService {
 
   private _gamesS = new BehaviorSubject<ICommonGame[]>(this._games);
 
-  sendData(product: ICommonGame): void {
-    product.wishList = true;
-    this._games.push(product);
+  sendData(game: ICommonGame): void {
+    this._games.push(game);
     this._gamesS.next(this._games);
     this._channelSource.next(this._games.length);
   }
