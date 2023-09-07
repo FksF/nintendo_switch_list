@@ -13,8 +13,6 @@ export class CartComponent implements OnInit {
 
   constructor(private sharedLibService: SharedLibService) {
     this.games = this.sharedLibService.getGames();
-    console.log('GAMES IN CART', this.games);
-
   }
 
 

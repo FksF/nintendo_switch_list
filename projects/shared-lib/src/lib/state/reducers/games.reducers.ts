@@ -12,7 +12,14 @@ export const gamesReducer = createReducer(
   on(loadedGames, (state, {games}) => {
     return {...state, loading: false, games}
   }),
-  on(updateCart, (state, storeId) => {
-    return {...state, loading: false}
+  on(updateCart, (state, objectID) => {
+    return updateObject(state, objectID);
   })
 );
+
+const updateObject = (state: GamesState, action: any) => {
+  let index = state.games.findIndex((ele)=>{
+    return ele.objectID === action.objectID;
+  });
+  return {...state, loading: false, games: [...state.games.slice(0, index),{...state.games[index],wishList: true},...state.games.slice(index + 1)]};
+}

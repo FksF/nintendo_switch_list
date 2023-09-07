@@ -16,6 +16,6 @@ export class GameCardComponent {
   constructor(private _sharedLibService: SharedLibService, private store: Store<AppState>) {}
   clickCard(game: IGameCard): void {
     this._sharedLibService.sendData(game);
-    this.store.dispatch(updateCart({storeId: game.storeId}));
+    this.store.dispatch(updateCart({objectID: game.objectID}));
   }
 }

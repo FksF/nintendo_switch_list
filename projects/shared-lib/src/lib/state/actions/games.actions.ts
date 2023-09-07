@@ -12,7 +12,7 @@ export const loadedGames = createAction(
 
 export const updateCart = createAction(
   '[Games List] Update cart',
-  props<{ storeId: string }>()
+  props<{ objectID: string }>()
 );
 
 

@@ -4,7 +4,7 @@ export interface ICommonGame {
   releaseDate: Date;
   price: IPrice;
   platform: string;
-  storeId: string;
+  objectID: string;
   wishList: boolean;
 }
 

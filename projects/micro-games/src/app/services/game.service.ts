@@ -21,7 +21,7 @@ export class GameService {
               releaseDate: item.releaseDate,
               price: item.price,
               platform: item.platform,
-              storeId: item.storeId,
+              objectID: item.objectID,
               wishList: false
             }));
         })
