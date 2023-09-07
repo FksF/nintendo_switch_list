@@ -7,6 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "micro-shell": "ng s micro-shell",
+    "micro-games": "ng s micro-games",
+    "micro-cart": "ng s micro-cart",
+    "all": "npm-run-all --parallel micro-shell micro-games micro-cart",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,

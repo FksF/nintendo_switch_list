@@ -1,15 +1,20 @@
-const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
+const {
+  shareAll,
+  withModuleFederationPlugin,
+} = require("@angular-architects/module-federation/webpack");
 
 module.exports = withModuleFederationPlugin({
-
-  name: 'micro-games',
-
+  name: "microGames",
   exposes: {
-    './GamesModule': './projects/micro-games/src/app/app.component.ts',
+    "./GamesModule": "./projects/micro-games/src/app/games/games.module.ts",
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({
+      singleton: true,
+      strictVersion: true,
+      requiredVersion: "auto",
+    }),
   },
-  sharedMappings: ["@shared-lib"]
+  sharedMappings: ["@shared-lib"],
 });

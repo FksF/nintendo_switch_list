@@ -1,0 +1,48 @@
+<div *ngIf="game">
+  <div class="BasicTilestyles__Container-sc-1bsju6x-0 hKftmL">
+      <a class="BasicTilestyles__Tile-sc-1bsju6x-1 cjBJsu" aria-label="Pokémon™ Scarlet">
+          <div class="BasicTilestyles__TileUpper-sc-1bsju6x-2 czsKxU" style="transform:none">
+              <div class="BasicTilestyles__ImageFrame-sc-1bsju6x-8 hBcPqZ">
+                  <div class="KeyArtstyles__StyledFrame-sc-u7um7j-0 iPLleU">
+                      <div class="Imagestyles__ImageWrapper-sc-1244ond-0 PjcqG">
+                        <img class="Imagestyles__CloudinaryImage-sc-1244ond-1 gUGinS" [src]="game.productImage" />
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="BasicTilestyles__TileLower-sc-1bsju6x-4 eReBwr">
+              <div class="BasicTilestyles__Info-sc-1bsju6x-6 ktXPHv">
+                  <div class="tilestyles__TitleWrapper-sc-eg7slj-1 bpYNbT">
+                      <h2 class="Headingstyles__StyledH-sc-s17bth-0 vsVuC Textstyles__StyledTitle-sc-w55g5t-0 lcSxww tilestyles__Title-sc-eg7slj-2 bKKnvO">{{game.title}}</h2>
+                      <div class="ProductTilestyles__ReleaseDate-sc-m1loqs-5 YnCBi">{{game.releaseDate | date: 'dd/MM/yyyy' }}</div>
+                  </div>
+                  <div class="ProductTilestyles__DescriptionTag-sc-m1loqs-4 gOthGv"></div>
+                  <div class="ProductTilestyles__PriceWrapper-sc-m1loqs-3 exaYTY">
+                      <div class="Pricestyles__Price-sc-1f0n8u6-0 ekQlgK">
+                          <div class="Pricestyles__PriceWrapper-sc-1f0n8u6-1 eroAfM">
+                              <span class="Pricestyles__MSRP-sc-1f0n8u6-5 dexgmS">
+                                  <span class="ScreenReaderOnlystyles__StyledReaderText-sc-1gv8hi6-0 lnGtBM Pricestyles__ScreenReaderOnly-sc-1f0n8u6-2 cKRBkt">Precio normal:</span>
+                                  {{game.price.finalPrice | currency:'MXN'}}
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tilestyles__Row-sc-eg7slj-0 dttZIF">
+                      <div class="PlatformLabelstyles__Platform-sc-v8r1lj-1 eDtWSu">
+                          <div class="PlatformLabelstyles__ColorTab-sc-v8r1lj-0 gmqMeI"></div>
+                          <span>{{game.platform}}</span>
+                      </div>
+                      <button class="WishlistButtonstyles__Heart-sc-1ud0cp0-0 ProductTilestyles__WishlistHeart-sc-m1loqs-0 engBip" [ngClass]="game.wishList ? 'ewlyLd' : 'iVkbLZ'" title="Agregar a la lista de deseos" aria-label="Agregar a la lista de deseos" aria-pressed="false" (click)="clickCard(game)">
+                          <svg viewBox="0 0 54 54" fill="currentColor" stroke="currentColor" width="24" role="presentation" alt="" data-testid="heartspark" color="currentColor" size="24">
+                              <g class="hearts">
+                                  <path class="heart heart-outline" d="M27 38.9c-.4 0-.6-.1-.8-.4L16.7 29c-1.8-1.8-2.7-3.8-2.7-6 0-4.4 3.5-8 7.9-8 1.9 0 3.7.8 5.1 2.3 1.4-1.4 3.2-2.3 5.1-2.3 4.4 0 7.9 3.6 7.9 8 0 2.6-1.5 4.6-2.7 6.1l-9.5 9.4c-.2.3-.6.4-.8.4zm-5.1-21.4c-3.1 0-5.6 2.5-5.6 5.6 0 1.9 1.1 3.3 2 4.3l8.6 8.7 8.5-8.6c1.4-1.5 2.1-3 2.1-4.4 0-3.1-2.5-5.6-5.6-5.6-1.5 0-3 1-4.1 2.5-.5.6-1.4.6-1.9 0-1-1.6-2.4-2.5-4-2.5z"></path>
+                                  <path class="heart heart-filled" d="M32.1 15.1c-1.9 0-3.7.8-5.1 2.3-1.4-1.4-3.2-2.3-5.1-2.3-4.4 0-7.9 3.6-7.9 8 0 2.1.9 4.2 2.7 6l9.5 9.5c.2.2.5.4.8.4.2 0 .6-.1.8-.4l9.5-9.4c1.2-1.4 2.7-3.5 2.7-6.1 0-4.4-3.5-8-7.9-8z"></path>
+                              </g>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </a>
+  </div>
+</div>
