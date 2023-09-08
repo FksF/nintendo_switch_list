@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS } from '@shared-lib';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 const routes: Routes = [{ path: '', component: GamesComponent }];
 
@@ -18,6 +19,7 @@ const routes: Routes = [{ path: '', component: GamesComponent }];
     GameCardComponent,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    InfiniteScrollModule
   ],
 })
 export class GamesModule {}

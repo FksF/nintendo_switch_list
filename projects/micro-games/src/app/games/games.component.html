@@ -569,7 +569,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="SearchLayout__FiltersContent-sc-5immi9-4 gDOEiO">
+                <div class="SearchLayout__FiltersContent-sc-5immi9-4 gDOEiO"
+                    infiniteScroll
+                    [infiniteScrollDistance]="2"
+                    [infiniteScrollThrottle]="400"
+                    (scrolled)="onScroll()"
+                    [scrollWindow]="false"
+
+                >
                     <div class="SearchLayout__FilterResultsGrid-sc-5immi9-6 difXoz">
                       <app-game-card
                         *ngFor="let game of games$ | async"
